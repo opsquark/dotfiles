@@ -1,9 +1,9 @@
 { config, pkgs , ...}:
 
 {
-   home.username = "jroychowdhury";
-   home.homeDirectory = "/home/jroychowdhury";
-   home.stateVersion = "25.11";
+  home.username = "jroychowdhury";
+  home.homeDirectory = "/home/jroychowdhury";
+  home.stateVersion = "25.11";
 
    
   programs.zsh = {
@@ -24,13 +24,12 @@
     '';
 
     oh-my-zsh = {
-	  	enable = true;
-		
-    	plugins = [
-      	  "git"
-      	  "globalias"
-    	];
-		theme = "fino-time";
+      enable = true;		
+      plugins = [
+        "git"
+        "globalias"
+      ];
+      theme = "fino-time";
     };
   };
 
