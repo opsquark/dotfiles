@@ -54,7 +54,7 @@
     lm_sensors
     wget
     curl
-    ndcu
+    ncdu
 
 
     # kubernetes
