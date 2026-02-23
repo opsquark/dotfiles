@@ -55,9 +55,9 @@ in
   services.snapper.configs.root = {
     SUBVOLUME = "/";
     FSTYPE = "btrfs";
-    TIMELINE_CREATE = "true";
-    TIMELINE_CLEANUP = "true";
-    NUMBER_CLEANUP = "true";
+    TIMELINE_CREATE = true;
+    TIMELINE_CLEANUP = true;
+    NUMBER_CLEANUP = true;
   };
     
   users.defaultUserShell = pkgs.zsh;
