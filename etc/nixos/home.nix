@@ -39,7 +39,13 @@
     oh-my-zsh
     firefox
 
+    jq
     fzf
+    
+    # editors 
+    alacritty
+    kitty
+    
     snapper
     btrfs-assistant
     btrfs-list
