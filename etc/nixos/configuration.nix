@@ -59,6 +59,12 @@ in
     TIMELINE_CLEANUP = true;
     NUMBER_CLEANUP = true;
   };
+
+  fileSystems."/.snapshots" = {
+    device = "/dev/disk/by-uuid/d34b8e9-9ffc-4ada-9e02-836010c8049c";
+    fsType = "btrfs";
+    options = [ "subvol=@snapshots" "noatime" ];
+  };
     
   users.defaultUserShell = pkgs.zsh;
 
