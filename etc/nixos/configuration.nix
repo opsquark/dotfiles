@@ -49,6 +49,9 @@ in
     jack.enable = true;
   };
 
+  systemd.services.snapperd.wantedBy = [ "multi-user.target" ];
+  systemd.services.snapperd.serviceConfig.Restart = "always";
+
   services.snapper.configs.root = {
     SUBVOLUME = "/";
     FSTYPE = "btrfs";
