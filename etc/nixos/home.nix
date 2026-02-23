@@ -38,5 +38,11 @@
     zsh
     oh-my-zsh
     firefox
+
+    snapper
+    btrfs-assistant
+    btrfs-list
+    btrfs-auto-snapshot
+    snapper-gui
   ];
 }
