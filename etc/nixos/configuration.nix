@@ -49,7 +49,13 @@ in
     jack.enable = true;
   };
 
-
+  services.snapper.configs.root = {
+    SUBVOLUME = "/";
+    FSTYPE = "btrfs";
+    TIMELINE_CREATE = "yes";
+    TIMELINE_CLEANUP = "yes";
+    NUMBER_CLEANUP = "yes";
+  };
     
   users.defaultUserShell = pkgs.zsh;
 
