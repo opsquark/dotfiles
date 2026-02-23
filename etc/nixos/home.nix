@@ -39,6 +39,7 @@
     oh-my-zsh
     firefox
 
+    ## terminal utility
     jq
     fzf
     
@@ -46,6 +47,7 @@
     alacritty
     kitty
     
+    ## system btrfs
     snapper
     btrfs-assistant
     btrfs-list
