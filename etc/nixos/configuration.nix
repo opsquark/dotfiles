@@ -13,6 +13,13 @@ in
       (import "${home-manager}/nixos")
     ];
   programs.zsh.enable = true;
+
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+    xwayland.enable = true;
+  };
+
   nixpkgs.config.allowUnfree = true;
 
 
@@ -53,54 +60,10 @@ in
   systemd.services.snapperd.wantedBy = [ "multi-user.target" ];
   systemd.services.snapperd.serviceConfig.Restart = "always";
 
-  # services.snapper.configs.root = {
-  #  SUBVOLUME = "/";
-  #  FSTYPE = "btrfs";
-  #  TIMELINE_CREATE = true;
-  #  TIMELINE_CLEANUP = true;
-  #  NUMBER_CLEANUP = true;
-  #};
-
-  # fileSystems."/.snapshots" = {
-  #  device = "/dev/disk/by-uuid/d34b8e9-9ffc-4ada-9e02-836010c8049c";
-  #  fsType = "btrfs";
-  #  options = [ "subvol=@snapshots" "noatime" ];
-  # };
-    
+  
   users.defaultUserShell = pkgs.zsh;
 
-  # hardware.pulseaudio.enable = true;
-  
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jroychowdhury = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
@@ -112,7 +75,7 @@ in
      shell = pkgs.zsh;
   };
 
-  # programs.firefox.enable = true;
+  programs.firefox.enable = true;
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
@@ -124,8 +87,11 @@ in
    chezmoi
    eza
    fzf
+   waybar
    kdePackages.kate
   ];
+
+  snix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
