@@ -42,6 +42,6 @@ sudo nixos-install --root /mnt
 echo "setting password for user(jroychowdhury)"
 nixos-enter --root /mnt -c 'passwd jroychowdhury'
 
-echo "rebooting"
-sudo reboot
+# echo "rebooting"
+# sudo reboot
 
