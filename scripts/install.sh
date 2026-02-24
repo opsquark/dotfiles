@@ -12,6 +12,9 @@ sudo mount --mkdir /dev/sda2 /mnt/home
 sudo mount --mkdir /dev/sda1 /mnt/boot
 sudo mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 
+echo "applying chezmoi configuration"
+sudo chezmoi apply --source ~/.local/share/chezmoi --destination /
+
 echo "generating hardware configuration"
 sudo nixos-generate-config --root /mnt --show-hardware-config > /mnt/etc/nixos/hardware-configuration.nix
 
